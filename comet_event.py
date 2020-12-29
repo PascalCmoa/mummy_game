@@ -1,6 +1,7 @@
 import pygame
 from comet import Comet
 
+
 # créer une classe pour gerer l'évènement
 class CometFallEvent:
 
@@ -24,15 +25,14 @@ class CometFallEvent:
 
     def meteor_fall(self):
         for i in range(1, 10):
-            # FAire apparaitre les boules de feu
+            # Faire apparaitre les boules de feu
             self.all_comets.add(Comet(self))
 
     def attempt_fall(self):
         # la jauge est pleine
         if self.is_full_loaded() and len(self.game.all_monster) == 0:
             self.meteor_fall()
-            self.fall_mode = True #Activer l'évènement
-
+            self.fall_mode = True  # Activer l'évènement
 
     def update_bar(self, surface):
 
@@ -50,6 +50,6 @@ class CometFallEvent:
         pygame.draw.rect(surface, (189, 11, 11), [
             0  # l'axe des x
             , surface.get_height() - 20  # l'axe des y
-            , (surface.get_width() / 100) * self.percent # la longueur de la fenetre
+            , (surface.get_width() / 100) * self.percent  # la longueur de la fenetre
             , 10  # la hauteur de la barre
         ])
