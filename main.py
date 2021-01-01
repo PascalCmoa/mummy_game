@@ -6,6 +6,11 @@ from Game import Game
 
 pygame.init()
 
+# définir une clock
+clock = pygame.time.Clock()
+FPS = 60
+
+
 # generer la fenetre de notre jeu
 pygame.display.set_caption("Cometes fall game")
 screen = pygame.display.set_mode((1080, 720))
@@ -72,3 +77,6 @@ while running:
             if play_button_rect.collidepoint(event.pos):
                 # mettre le jeu en mode lancé
                 game.start()
+
+    # fixer le nombre de FPS sur la clock
+    clock.tick(FPS)

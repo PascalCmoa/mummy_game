@@ -19,8 +19,7 @@ class Comet(pygame.sprite.Sprite):
         # veirifier si nombre comete = 0
         if len(self.comet_event.all_comets) == 0:
             self.comet_event.reset_percent()
-            self.comet_event.game.spawn_monster()
-            self.comet_event.game.spawn_monster()
+            self.comet_event.game.start()
 
     def fall(self):
         self.rect.y += self.velocity
